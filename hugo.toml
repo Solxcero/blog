@@ -17,6 +17,6 @@ title = 'Ahora'
   #rss = true                                # show rss icon
 
   # home page profile
-  avatar = 'rumbini98@gmail.com'                 # gravatar email or image url
+  avatar = 'https://github.com/Solxcero/Solxcero.github.io/assets/99321739/4ccb5f75-725b-4360-b1d6-6b1c99072d56'                 # gravatar email or image url
   name = 'Sunyoung Lee'
   bio = 'Version 1.0.0'
