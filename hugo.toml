@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://solxcero.github.io/'
 languageCode = 'en-us'
 title = 'Ahora'
 theme = "paper"
