@@ -1,7 +1,7 @@
 baseURL = 'https://Solxcero.github.io'
 languageCode = 'en-us'
-title = 'Ahora'
 theme = "paper"
+title = 'Ahora'
 
 [params]
   # color style
