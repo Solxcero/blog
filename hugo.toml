@@ -30,15 +30,10 @@ title = 'Ahora'
 [menu]
 
   [[menu.main]]
-    identifier = "categories"
-    name = "categories"
-    url = "/categories/"
-    weight = 10
-  [[menu.main]]
-    identifier = "tags"
-    name = "tags"
-    url = "/tags/"
-    weight = 10
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 15
 
 [taxonomies]
 category = "categories"
