@@ -33,7 +33,7 @@ title = 'Ahora'
     identifier = "about"
     name = "About"
     url = "/about/"
-    weight = 15
+    weight = 13
 
 [taxonomies]
 category = "categories"
