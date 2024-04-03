@@ -8,6 +8,7 @@ categories = ["git"]
 ## Hugo 블로그.
 깃허브 블로그 테마 유목민이던 내가 드디어 맘에 드는 테마를 발견했는데, 기존에 사용하던 Jekyll가 아닌 Hugo 기반이다.  
 Hugo는 처음이기 때문에 공부도 하고, 혹시나 복기가 필요할 때 참고하기 위해 포스팅을 하려고 한다. 
+[Hugo Documentation](https://gohugo.io/documentation/)
 
 ## Hugo 설치
 (Windows 기준)  
