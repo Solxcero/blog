@@ -52,7 +52,7 @@ $ hugo server -D
 `localhost:1313` 혹은 `127.0.01:1313` 으로 접속해 확인 
 
 ## Build 단계
-**1. Github Repo 생성** 
+**1. Github Repo 생성**  
 <프로젝트이름>의 저장소 하나와, <깃허브ID.github.io> 저장소 하나 생성  
 나의 경우 `blog` 와 `Solxcero.github.io`  
 
@@ -64,7 +64,7 @@ $ git init
 $ git remote add origin <프로젝트 Repo url>
 ```
 
-**3. gihub page 폴더 submodule**
+**3. gihub page 폴더 submodule**  
 프로젝트 폴더 remote 후 생성 된 `public` 폴더 안에 github.io repo를 연결 
 ```bash
 $ git submodule add -b main <github.io repository url> public
