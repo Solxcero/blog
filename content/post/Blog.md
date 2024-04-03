@@ -1,7 +1,6 @@
 +++
 title = 'Blog'
 date = 2024-04-03T10:41:44+09:00
-draft = true
 +++
 
 ## Hugo 블로그.
@@ -120,3 +119,8 @@ git push origin main
 ```
 테마 이름만 본인이 사용하는 이름으로 수정하면 됨.   
 Windows는 쉘스크립트를 실행할 수 없으므로 `gitbash`를 사용하면 됨.
+프로젝트 폴더 경로에서 다음 명령어 실행 
+```bash
+$ ./deploy.sh "commit message"
+```
+
