@@ -6,7 +6,7 @@ title = 'Ahora'
 
 [params]
   # color style
-  color = 'linen'                           # linen, wheat, gray, light
+  color = 'light'                           # linen, wheat, gray, light
 
   # header social icons
   github = 'Solxcero'                 # github.com/YOUR_GITHUB_ID
