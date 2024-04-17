@@ -23,9 +23,20 @@ title = 'Ahora'
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-#  [markup.highlight]
-#    lineNos = true
-
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    hl_inline = false
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    noHl = false
+    style = 'native'   #native
+    tabWidth = 4
 
 [menu]
 
@@ -51,3 +62,6 @@ title = 'Ahora'
   category = "categories"
   tag = "tags"
   series = "series"
+  
+[permalinks]
+    categories =  "/:section/:slug"
