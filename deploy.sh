@@ -15,7 +15,7 @@ if [ -n "$*" ]; then
 fi
 git commit -m "$msg"
 # Push source and build repos.
-git push origin main
+git push origin main -f
 cd ..
 # anyblogname 업데이트
 git add .
@@ -24,4 +24,4 @@ if [ $# -eq 1 ]
   then msg="$1"
 fi
 git commit -m "$msg"
-git push origin main
+git push origin main -f
