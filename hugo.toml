@@ -59,6 +59,12 @@ title = 'Ahora'
     url = "/categories/"
     weight = 13
 
+#  [[menu.main]]
+#    identifier = "archive"
+#    name = "Archive"
+#    url = "/archives/"
+#    weight = 13
+
 [taxonomies]
   category = "categories"
   tag = "tags"
