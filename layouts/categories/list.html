@@ -6,16 +6,16 @@
 
 <!-- Conditional Title Tag -->
 {{ if and $categoryBase $subcategoryActive }}
-  <h1 class="mb-16">📂 {{ .Title }}</h1>
+  <h2 class="mb-16">📂 {{ index $urlSegments 4 }}</h2>
 {{ else }}
-  <h1 class="mb-16"># {{ .Title }}</h1>
+  <h2 class="mb-16"># {{ .Title }}</h2>
 {{ end }}
 
 <!-- Show or Hide Categories List based on URL depth -->
 {{ if or (not $categoryBase) (and $categoryBase (not $subcategoryActive)) }}
 <ul>
     {{ range $key, $value := .Site.Taxonomies.categories }}
-    <h2>📁<a style="text-decoration: none;" href='{{ "/categories/" | relLangURL }}{{ $key | urlize }}'>{{ $key }}</a> ({{ len $value.Pages }})</h2>
+    <h3>📁<a style="text-decoration: none;" href='{{ "/categories/" | relLangURL }}{{ $key | urlize }}'>{{ $key }}</a> ({{ len $value.Pages }})</h3>
     {{ end }}
 </ul>
 {{ end }}
