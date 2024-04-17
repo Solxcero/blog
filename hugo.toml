@@ -40,11 +40,11 @@ title = 'Ahora'
 
 [menu]
 
-  [[menu.main]]
-    identifier = "about"
-    name = "About"
-    url = "/about/"
-    weight = 13
+ # [[menu.main]]
+    #identifier = "about"
+    #name = "About"
+    #url = "/about/"
+    #weight = 13
 
   [[menu.main]]
     identifier = "tags"
@@ -62,6 +62,4 @@ title = 'Ahora'
   category = "categories"
   tag = "tags"
   series = "series"
-  
-[permalinks]
-    categories =  "/:section/:slug"
+ 
