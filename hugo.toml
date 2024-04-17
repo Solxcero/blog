@@ -22,7 +22,8 @@ title = 'Ahora'
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
-      unsafe = true
+      unsafe = true  # HTML 태그를 허용하도록 설정
+      
   [markup.highlight]
     anchorLineNos = false
     codeFences = true
