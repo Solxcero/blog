@@ -1,25 +1,22 @@
 {{ define "main" }}
 
-{{ $urlSegments := split .Permalink "/" }}
-{{ $isCategoryPage := eq (index $urlSegments 3) "categories" }}
-{{ $isSubcategoryPage := gt (len $urlSegments) 4 }}
-
-<!-- Conditional Title Tag -->
-{{ if $isSubcategoryPage }}
-  <h2 class="mb-16">📂 {{ index $urlSegments 4 }}</h2>
-{{ else }}
-  <h2 class="mb-16"># {{ .Title }}</h2>
+<!-- Tag Title -->
+{{ if .Title }}
+<h1 class="mb-16">📁{{ .Title }}</h1>
 {{ end }}
 
 <!-- Show or Hide Categories List based on URL depth -->
-{{ if or (not $isCategoryPage) (and $isCategoryPage (not $isSubcategoryPage)) }}
+{{ $urlSegments := split .Permalink "/" }}
+{{ $categoryBase := in (index $urlSegments 3) "categories" }}
+{{ $subcategoryActive := gt (len $urlSegments) 5 }}
+
+{{ if or (not $categoryBase) (and $categoryBase (not $subcategoryActive)) }}
 <ul>
-    {{ range $categoryName, $category := .Site.Taxonomies.categories }}
-    <h3>📁<a style="text-decoration: none;" href='{{ "/categories/" | relLangURL }}{{ $categoryName | urlize }}'>{{ $categoryName }}</a> ({{ len $category.Pages }})</h3>
+    {{ range $key, $value := .Site.Taxonomies.categories }}
+    <h3>📁<a style="text-decoration: none;" href='{{ "/categories/" | relLangURL }}{{ $key | urlize }}'>{{ $key }}</a> ({{ len $value.Pages }})</h3>
     {{ end }}
 </ul>
 {{ end }}
-
 
 <!-- $pages -->
 {{ $pages := union .RegularPages .Sections }}<!---->
