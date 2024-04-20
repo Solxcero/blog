@@ -2,7 +2,7 @@
 
 <!-- Tag Title -->
 {{ if .Title }}
-<h1 class="mb-16">📁{{ .Title }}</h1>
+<h1 class="mb-16">#{{ .Title }}</h1>
 {{ end }}
 
 <!-- Show or Hide Categories List based on URL depth -->
@@ -13,7 +13,7 @@
 {{ if or (not $categoryBase) (and $categoryBase (not $subcategoryActive)) }}
 <ul>
     {{ range $key, $value := .Site.Taxonomies.categories }}
-    <h3>📁<a style="text-decoration: none;" href='{{ "/categories/" | relLangURL }}{{ $key | urlize }}'>{{ $key }}</a> ({{ len $value.Pages }})</h3>
+    <h3>📁 <a style="text-decoration: none;" href='{{ "/categories/" | relLangURL }}{{ $key | urlize }}'>{{ $key }}</a> ({{ len $value.Pages }})</h3>
     {{ end }}
 </ul>
 {{ end }}
