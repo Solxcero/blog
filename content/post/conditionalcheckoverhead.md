@@ -1,9 +1,8 @@
 +++
 title = 'IF문의 오버헤드'
 date = 2024-07-06T22:00:55+09:00
-draft = true
 tags = []
-categories = []
+categories = ["DailyCoding"]
 +++
 
 ## 백준 BOJ거리 문제를 풀다가
