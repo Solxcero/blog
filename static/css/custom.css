@@ -1,0 +1,97 @@
+/* Place custom css here. */
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700,800');
+
+body {
+    font-family: 'Noto Sans KR';
+}
+
+body::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+
+body::-webkit-scrollbar-thumb {
+    outline: none;
+    border-radius: 10px;
+    border: 4px solid transparent;
+    box-shadow: inset 6px 6px 0 rgb(129, 129, 129);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    border: 4px solid transparent;
+    box-shadow: inset 6px 6px 0 rgba(50, 50, 50, 0.872);
+}
+
+body::-webkit-scrollbar-track {
+    box-shadow: none;
+    background-color: transparent;
+}
+
+code {
+    font-family: 'Consolas'; /* 폰트 설정 */
+    background-color: #b2b2b214; /* 배경색 */
+    color : rgb(216, 67, 67) !important ;
+    margin:0; /* 여백 설정 */
+    font-size: 0.8rem; /* 폰트 크기 */
+    border-radius: 4px; /* 모서리 둥글게 */
+    /*border: 1px solid #ccc;*/ /* 테두리 설정 */
+}
+code:before, code:after {
+    content: '';
+    color: transparent;
+}
+
+code::-webkit-scrollbar{
+    width: 5px;
+    height: 6px;
+  }
+  
+  code::-webkit-scrollbar-thumb{
+      background-color: #2f3542;
+      border-radius: 10px;
+  }
+  
+  code::-webkit-scrollbar-track{
+      background-color: grey;
+      border-radius: 10px;
+      /* box-shadow: inset 0px 0px 5px white; */
+  }
+  
+  code::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+pre code {
+    color: inherit !important; /* 부모 요소의 색상을 상속 받음 */
+    white-space: pre; /* 코드가 줄 바꿈 없이 그대로 표시되도록 설정 */
+    overflow: auto; /* 가로 및 세로 스크롤바 표시 */
+}
+pre code::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+
+pre code::-webkit-scrollbar-thumb {
+    outline: none;
+    border-radius: 10px;
+    border: 4px solid transparent;
+    box-shadow: inset 6px 6px 0 rgb(129, 129, 129);
+}
+
+pre code::-webkit-scrollbar-thumb:hover {
+    border: 4px solid transparent;
+    box-shadow: inset 6px 6px 0 rgba(50, 50, 50, 0.872);
+}
+
+pre code::-webkit-scrollbar-track {
+    box-shadow: none;
+    background-color: transparent;
+}
+
+
+
+::selection{
+    background: rgba(255, 230, 0, 0.557);
+    /* color: #fff; */
+ }
