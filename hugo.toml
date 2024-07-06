@@ -55,7 +55,7 @@ title = 'Ahora'
     
   [[menu.main]]
     identifier = "categories"
-    name = "Category"
+    name = "Categories"
     url = "/categories/"
     weight = 13
 
