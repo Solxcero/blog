@@ -1,24 +1,37 @@
 {{ define "main" }}
 
 <!-- Tag Title -->
-{{ if and .Title (eq .Type "tags") }}
+{{ if and .Title (eq .Type "categories") }}
 <h1 class="mb-16">#{{ .Title }}</h1>
+{{ else }}
+<h1 class="mb-16">Categories</h1>
 {{ end }}
 
 <!-- $pages -->
-{{ $pages := union .RegularPages .Sections }}<!---->
-{{ if .IsHome }}<!---->
-{{ $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}<!---->
+{{ $pages := .Pages }}
+{{ if .IsHome }}
+{{ $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{ end }}
 
+<!-- Category List -->
+{{ if eq .Kind "section" }}
+<ul>
+  {{ range .Data.Terms.Alphabetical }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Title }} ({{ .Count }})</a>
+    </li>
+  {{ end }}
+</ul>
+{{ else }}
+
 <!-- Articles -->
-{{ $paginator := .Paginate $pages }} {{ range $index, $page := $paginator.Pages
-}}<!---->
+{{ $paginator := .Paginate $pages }} 
+{{ range $index, $page := $paginator.Pages }}
 
 <!-- avatar -->
-{{ if and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) }}<!---->
+{{ if and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) }}
 
-{{ $avatar_url := $.Scratch.Get "avatar_url" }}<!---->
+{{ $avatar_url := $.Scratch.Get "avatar_url" }}
 {{ if or $avatar_url site.Params.name }}
 <div class="-mt-2 mb-16 flex items-center">
   {{ if $avatar_url }}
@@ -31,7 +44,7 @@
       alt="{{ site.Params.name | default site.Title }}"
     />
   </div>
-  {{ end }}<!---->
+  {{ end }}
   {{ if site.Params.name }}
   <div>
     <h1 class="mb-2 mt-3 text-[1.6rem] font-bold">{{ site.Params.name }}</h1>
@@ -42,7 +55,7 @@
   </div>
   {{ end }}
 </div>
-{{ end }}<!---->
+{{ end }}
 
 {{ end }}
 
@@ -66,13 +79,14 @@
 <nav class="mt-16 flex">
   {{ if $paginator.HasPrev }}
   <a class="btn" href="{{ $paginator.Prev.URL }}">← {{ i18n "prev_page" }}</a>
-  {{ end }}<!---->
+  {{ end }}
   {{ if $paginator.HasNext }}
   <a class="btn ml-auto" href="{{ $paginator.Next.URL }}"
-    >{{ i18n "next_page" }} →</a
-  >
+    >{{ i18n "next_page" }} →</a>
   {{ end }}
 </nav>
-{{ end }}<!---->
+{{ end }}
+
+{{ end }}
 
 {{ end }}
