@@ -5,7 +5,11 @@ draft = true
 tags = []
 categories = ["Investment"]
 +++
-[이전 글 > 투자 덕질 : Style Investment(1)](https://solxcero.github.io/post/styleinvestment1/)
+<span style="text-decoration:none; border-bottom:2px solid blue;">
+    <a href="https://solxcero.github.io/post/styleinvestment1/" style="text-decoration:none; color:inherit;"  target="_blank">
+        이전 글 > 투자 덕질 : Style Investment(1)
+    </a>
+</span>
 
 ## 구현가자
 
