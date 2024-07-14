@@ -50,7 +50,7 @@ print(dp[-1] if dp[-1] != max_energy else -1)
 이 부분은 블록을 점프할 때, 블록 값이 `max_energy` 라면 애초에 점프할 수 없는 블록이기에 "아래의 반복문 연산을 하지 않아도 된다" 라는 제한 조건을 걸어 둔 것이다. 
 "코드 두 줄로 불필요한 연산을 줄였으니 분명 시간을 단축시켰겠지?!"  라는 설렘을 가지고 해당 조건문을 없애고 다시 코드를 제출해 봤다. 
 
-![코드제출결과화면](/images/12026.png)
+![코드제출결과화면](/images/DailyCoding/12026.png)
 
 놀랍게도(?) 위에가 조건문이 없는 코드이다. 물론 미세한 시간 차이이긴 하지만, 그럼에도 내 예상을 빗나간 결과라 상당히 의아했다. 불필요한 연산을 하는게 더 빠르다..? 이걸 어떻게 이해해야하지..?  
 혼자 고민하다가 그냥 GPT 에 물어봤다. 놀랍도록 발전한 세상에 감사합니다..  
@@ -123,10 +123,10 @@ print(f"IF문 없음: {result_without_condition}, Time: {end_time - start_time:.
 
 기대되는 실행 결과는~~~
 
-![결과1](/images/12026_1.png) 
+![결과1](/images/DailyCoding/12026_1.png) 
 잉? 뭐야 조건문 있는게 더 빠르잖아~~~ 다시다시
 
-![결과2](/images/12026_2.png)
+![결과2](/images/DailyCoding/12026_2.png)
 뭐야뭐야~~~ 이번엔 조건문 없는게 더 빠르네?? 
 
 그렇다면 결과의 차이를 만드는 녀석은 내가 랜덤으로 생성한 BOJ 배열 이다..!  
@@ -140,7 +140,7 @@ blocks 데이터를 두 가지 경우로 만들어 보았다.
 blocks = 'BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBJBOJ'
 ```
 BOJ가 연속적이지 않은 경우이다. 
-![결과3](/images/12026_3.png)
+![결과3](/images/DailyCoding/12026_3.png)
 처음 B에서 다음 O가 나올 때까지 `dp[i] == max_energy` 조건에 걸려 반복문 연산을 다 건너뛰기 때문에 if 문이 있는 코드가 더 빠르게 통과한다.  
 
 
@@ -150,7 +150,7 @@ BOJ가 연속적이지 않은 경우이다.
 blocks = 'BOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJBOJJ'
 ```
 BOJ가 연속적인 패턴으로 등장하는 경우이다. 
-![결과4](/images/12026_4.png)
+![결과4](/images/DailyCoding/12026_4.png)
 블록의 매 순서가 IF문에 해당하지 않아 거의 모든 순서에서 반복문을 실행해야 한다.  따라서 IF 문의 역할이 미미하다.  
 
 ## 결론

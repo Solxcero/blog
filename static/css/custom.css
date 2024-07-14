@@ -105,9 +105,7 @@ pre::-webkit-scrollbar-track {
     background-color: transparent;
 }
 
-
-
 ::selection{
-    background: rgba(255, 230, 0, 0.557);
-    /* color: #fff; */
+    background: rgb(0, 0, 0);
+    color: #3088e6;
  }
