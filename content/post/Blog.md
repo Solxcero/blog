@@ -49,7 +49,7 @@ $ hugo new <게시글제목>.md
 ```bash
 $ hugo server -D
 ```
-`localhost:1313` 혹은 `127.0.01:1313` 으로 접속해 확인 
+`localhost:1313` 혹은 `127.0.0.1:1313` 으로 접속해 확인 
 
 ## Build 단계
 **1. Github Repo 생성**  

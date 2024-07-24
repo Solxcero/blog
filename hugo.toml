@@ -15,14 +15,20 @@ title = 'Ahora'
   avatar = 'https://github.com/Solxcero/Solxcero.github.io/assets/99321739/4ccb5f75-725b-4360-b1d6-6b1c99072d56'                 # gravatar email or image url
   name = 'Sunyoung Lee'
   bio = 'Version 1.0.0'
-  
+  math = true
 # ------------------------------
  
   # needed to  render raw HTML (e.g. <sub>, <sup>, <kbd>, <mark>)
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
-      unsafe = true  # HTML 태그를 허용하도록 설정
+      #unsafe = true  # HTML 태그를 허용하도록 설정
+      [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        #enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
       
   [markup.highlight]
     anchorLineNos = false
