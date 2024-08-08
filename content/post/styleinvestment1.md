@@ -1,14 +1,14 @@
 +++
-title = '투자 덕질 : Style Investment(1)'
+title = '투자덕질'
 date = 2024-07-13T09:21:19+09:00
-draft = true
 tags = []
 categories = ["Investment"]
 +++
 
-## 투자에도 덕질이 있다면 그건 스타일투자가 아닐까?
+## 투자에도 덕질이 있다면 그건 인덱스 투자가 아닐까?
 내 아이돌 최애의 90%는 그 그룹의 메인보컬이다.  
 메인보컬을 좋아하면 행복한 덕질을 보장할 수 있다. 음원으로도 그 멤버의 목소리를 가장 잘 들을 수 있고, 무대 영상에서도 춤추며 열창하는 프로다운 모습을 볼 수 있다.  
+
 <p align="center">
 <img src="/images/Investment/jh.jpg" alt="영원한내최애" width="400" >
 <em> 나의 영원한 최애 종현옵빠 </em>
@@ -61,13 +61,6 @@ categories = ["Investment"]
     최근 3년 동안의 주당 순이익(EPS)의 변화를 현재 주가와 비교하는 것이다.   
     현재를 기준으로 계산을 해본다면
 
-{{< math.inline >}}
-
-<p>
-Inline math: \(\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…\)
-</p>
-
-{{</ math.inline >}}
-
-
- 
+$$
+ \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }
+$$

@@ -57,5 +57,10 @@
     </main>
 
     {{ partial "footer.html" . }}
+    
+    {{ if or .Params.math .Site.Params.math }}
+    {{ partial "math.html" . }}
+    {{ end }}
+
   </body>
 </html>
