@@ -1,12 +1,12 @@
 +++
-title = '투자덕질'
+title = '스타일 지수 #1'
 date = 2024-07-13T09:21:19+09:00
-draft = true
+draft = false
 tags = []
 categories = ["Investment"]
 +++
 
-## 투자에도 덕질이 있다면 그건 인덱스 투자가 아닐까?
+## 약간 덕질같은 느낌?
 내 아이돌 최애의 90%는 그 그룹의 메인보컬이다.  
 메인보컬을 좋아하면 행복한 덕질을 보장할 수 있다. 음원으로도 그 멤버의 목소리를 가장 잘 들을 수 있고, 무대 영상에서도 춤추며 열창하는 프로다운 모습을 볼 수 있다.  
 
@@ -48,21 +48,33 @@ categories = ["Investment"]
 위에서 설명했듯이, 주식의 가치주적 요소와 성장주적인 요소를 점수로 평가 해야하므로 이를 위한 가치 평가 지표, 성장 평가 지표가 있어야 한다.  
 아래는 문서에서 제시한 지표이다.   
 
-**Growth Factors**
-- Three-Year Net Change in Earnings per Share(Excluding Extra Items) over Current Price
-- Three-Year Sales per Share Growth Rate
-- Momentum (12 Months % Price Change)
-
-**Value Factors**
-- Book Value to Price Ratio
-- Earnings To Price Ratio
-- Sales to Price Ratio
-
-하나씩 보겠슴다  
-1. **Three-Year Net Change in Earnings per Share over Current Price**   
+#### **Growth Factors**
+- **Three-Year Net Change in Earnings per Share(Excluding Extra Items) over Current Price**  
     최근 3년 동안의 주당 순이익(EPS)의 변화를 현재 주가와 비교하는 것이다.   
-    현재를 기준으로 계산을 해본다면
+    해당 지표 값이 높을수록 회사의 성장 잠재력이 높다고 평가할 수 있다.  
+    피터린치가 만든 PEG의 역수이다. 
 
-$$
- \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }
-$$
+- **Three-Year Sales per Share Growth Rate**  
+    최근 3년 동안의 주당 매출 성장률을 의미한다.  
+    회사의 매출이 주당 기준으로 얼마나 증가했는지 판단할 수 있으며, 해당 값이 높을수록 회사가 빠르게 성장하고 있음을 시사한다.  
+
+- **Momentum (12 Months % Price Change)**  
+    최근 12개월 동안의 주가 변동률을 나타낸다. 
+    투자자들이 주식의 최근 성과를 평가할 때 주로 사용하며 높은 모멘텀은 주가가 상승 추세에 있음을 보여준다. 
+
+#### **Value Factors**
+- **Book Value to Price Ratio**  
+    회사의 장부 가치(Book Value)를 현재 주가로 나눈 비율이다. 
+    이때 장부 가치는 회사의 순자산(자산-부채)으로 계산되며, 이 비율이 높을수록 주식이 저평가 되어있을 가능성이 높다.  
+    PBR의 역수이다. 
+
+- **Earnings To Price Ratio**  
+    회사의 주당 순이익(EPS)을 현재 주가로 나눈 비율이다.  
+    주가 대시 순이익 비율(P/E 비율의 역수)로 이 비율이 높을수록 주식이 저평가 되었음을 의미한다.    
+    PER의 역수이다. 
+
+- **Sales to Price Ratio**  
+    회사의 주당 매출을 현재 주가로 나눈 비율이다. 
+    주가 대비 매출 비율로, 이 비율이 높을수록 주식이 저평가되었을 가능성이 있다. 
+
+
