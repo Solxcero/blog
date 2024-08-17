@@ -11,8 +11,10 @@ categories = ["Investment"]
 메인보컬을 좋아하면 행복한 덕질을 보장할 수 있다. 음원으로도 그 멤버의 목소리를 가장 잘 들을 수 있고, 무대 영상에서도 춤추며 열창하는 프로다운 모습을 볼 수 있다.  
 
 <p align="center">
-<img src="/images/Investment/jh.jpg" alt="영원한내최애" width="400" >
-<em> 나의 영원한 최애 종현옵빠 </em>
+  <a href="/images/Investment/jh.jpg" data-lightbox="image-set">
+    <img src="/images/Investment/jh.jpg" alt="Your Alt Text" style="width: 300px;">
+  </a>
+  <em>나의 영원한 최애 종현옵빠</em>
 </p>
 
 
