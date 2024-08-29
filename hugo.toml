@@ -55,11 +55,11 @@ title = 'Ahora'
     #url = "/about/"
     #weight = 13
 
-  [[menu.main]]
-    identifier = "tags"
-    name = "Tag"
-    url = "/tags/"
-    weight = 13
+#  [[menu.main]]
+#    identifier = "tags"
+#    name = "Tag"
+#    url = "/tags/"
+#    weight = 13
     
   [[menu.main]]
     identifier = "categories"
