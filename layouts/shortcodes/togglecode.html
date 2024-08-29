@@ -1,0 +1,21 @@
+<script>
+    function toggleCodeBlock(id) {
+      const codeBlock = document.getElementById(id);
+      const button = document.getElementById(id + '-button');
+      if (codeBlock.style.display === 'none') {
+        codeBlock.style.display = 'block';
+        button.textContent = 'Hide Code';
+      } else {
+        codeBlock.style.display = 'none';
+        button.textContent = 'Show Code';
+      }
+    }
+  </script>
+  
+  <div>
+    <button id="{{ .Get "id" }}-button" onclick="toggleCodeBlock('{{ .Get "id" }}')">Show Code</button>
+    <pre id="{{ .Get "id" }}" style="display: none;">
+      <code>{{ .Inner }}</code>
+    </pre>
+  </div>
+  
