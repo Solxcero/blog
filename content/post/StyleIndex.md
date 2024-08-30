@@ -255,7 +255,7 @@ neutral     16
 더 보기 편하게 plotly로 가져와봤다. (모바일 환경에서는 보기 불편할 수 있음)
 
 
-<div style="position: relative; width: 100%; height: 600px; padding-bottom: 56.25%;">
+<div style="position: relative; width: 100%; height: 700px;">
     <iframe 
         src="/plotly/style_result.html" 
         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
