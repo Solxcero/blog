@@ -245,13 +245,28 @@ neutral     16
 22년도에 프로젝트 했을 때도 중립 그룹 수가 가장 적긴 했지만 그때는 76개로 지금보다 더 많았다. 
 원인을 찾아보니, 중립그룹에 속한 삼성전자가의 시가총액 비율이 무려 27%나 차지했다. 그러다 보니 자연스럽게 중립그룹의 종목 수가 적을 수밖에..
 
+<p align="center">
+  <a href="/images/Investment/style_rest.png" data-lightbox="image-set">
+    <img src="/images/Investment/style_rest.png" alt="Your Alt Text" >
+  </a>
+  <em> 산점도로 각 그룹 종목 현황 파악하기 </em>
+</p>
 
-<iframe 
-    width="800" 
-    height="500" 
-    frameborder="0" 
-    scrolling="no" 
-    src="https://plotly.com/~solxcero/1/embed"></iframe>
+더 보기 편하게 plotly로 가져와봤다. (모바일 환경에서는 보기 불편할 수 있음)
+
+
+<div style="position: relative; width: 100%; height: 600px; padding-bottom: 56.25%;">
+    <iframe 
+        src="/plotly/style_result.html" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+        frameborder="0" 
+        scrolling="yes">
+    </iframe>
+</div>
+<!--src="https://plotly.com/~solxcero/1/embed"-->
+
+
+
 
 위의 scatter 차트의 범례를 하나씩 클릭하면 각 그룹의 종목들만 볼 수 있다. (성장점수, 가치점수) , 종목코드 순으로 popup정보가 뜬다. 
 
