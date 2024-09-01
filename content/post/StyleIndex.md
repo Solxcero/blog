@@ -47,7 +47,7 @@ categories = ["Investment"]
 1. **winsorize** : 데이터의 이상치를 처리하는 방법으로 상한 하한을 각 양끝의 0.05 로 설정하는 방법이다. 즉, 전체 범위의 0.05 ~ 0.95 에만 데이터가 존재하게 하는 방법이다. 이 방법을 쓰면 이상치 데이터를 제거하지 않아도 된다. 실제 금융데이터의 이상치 처리에서 많이 쓰이는 기법이라고 한다. 
 2. **z정규화** : 각 수치들의 범위가 다 다르기 때문에 객관적인 비교를 위해 정규화를 진행한다. 
 
-### <span style="text-decoration:none; color:red; font-weight:bold;">Growth Factors</span>
+### Growth Factors
 - <span style="text-decoration:none; border-bottom:3px solid red; font-weight:bold;">Three-Year Net Change in Earnings per Share(Excluding Extra Items) over Current Price</span>  
     최근 3년 동안의 주당 순이익(EPS)의 변화를 현재 주가와 비교하는 것이다.   
     해당 지표 값이 높을수록 회사의 성장 잠재력이 높다고 평가할 수 있다.  
@@ -107,7 +107,7 @@ growth_S.sort_values('GS',ascending=False)
 </p> 
 
 
-### <span style="text-decoration:none; color:blue; font-weight:bold;">Value Factors</span>  
+### Value Factors
 먼저 PER과 PBR의 역수를 구하고 시작하겠다. 역수를 구하는 이유는, PER과 PBR의 경우 그 값이 작을수록 저평가되었다고 판단하기 때문에 역수를 취함으로써 점수처럼 값이 커질 수록 저평가되었음을 판단하기 위해서이다. 
 ```python
 fm = stock.get_market_fundamental('20240603',market="KOSPI")
@@ -372,17 +372,25 @@ nw['W(V,X)'] = nw['D(G,X)']/(nw['D(G,X)']+nw['D(V,X)'])
 nw['W(G,X)'] = nw['D(V,X)']/(nw['D(G,X)']+nw['D(V,X)'])
 ```
 이렇게 구한 다음 W(V,X) > W(G,X) 라면 Value 그룹, W(V,X) < W(G,X) 라면 Growth 그룹으로 분류한다. 
-
 <p align="center">
-  <a href="/images/Investment/n_result.png" data-lightbox="image-set">
-    <img src="/images/Investment/n_result.png" alt="Your Alt Text",style="height:300px;" >
+  <a href="/images/Investment/n_result.png" data-lightbox="image-set" >
+    <img src="/images/Investment/n_result.png" alt="Your Alt Text" style="width: 500px !important; height: auto !important;">
   </a>
 </p>
 
 티커 002350 만 가치그룹으로 분류되고 나머지는 전부 성장그룹으로 분류된 것을 알 수 있다. 
+삼성전자는 성장주로 분류된 것도 확인할 수 있다.  
+
+### Index로 만들어보기
+이제 종목들을 합쳐서 각 그룹의 인덱스를 만들어볼 차례이다.  
+간단하게는 그룹별로 모든 종목을 다 합쳐서 만드는 방법이 있지만, 
+우선 종목들을 대형성장주, 대형가치주, 중소형성장주, 중소형가치주 로 분류를 한 뒤, 시장 MDD 30을 기준으로 그 이하인 종목들만 필터링 하는 작업을 한다.
+대형주는 시가총액 기준 상위 100개, 그 나머지는 중소형주로 분류했다. 
+(내용 수정 중 ...)
 
 
-### 마무리... 근데 이제 샤이니를 곁들인...
+
+## 마무리... 근데 이제 샤이니를 곁들인...
 주가 정보는 매일 빠르게 변화하며 시장의 움직임을 보여주는 데이터이다. 이번 작업을 통해 금융시장의 움직임을 성장점수, 가치점수, 성장그룹, 가치그룹이라는 지표로 압축해 볼 수 있었다. 
 과거 프로젝트를 진행할 당시에도 이 같은 창의적인 접근이 매우 흥미로웠었기에 이번에 날짜와 그래프를 업데이트하여 다시 구현해보았다. 
 결국 지표라는 것은 대표성을 띄는 것이 중요하다고 생각한다. 지표명과 그 지표에 속해있는 요소들의 특성이 일치한다면 잘 만든 지표라고 할 수 있을 거다. 
