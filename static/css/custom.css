@@ -134,14 +134,14 @@ pre::-webkit-scrollbar-track {
 
 
 
-/* @media (min-width: 75em) {
+@media (min-width: 80em) {
     .toc {
-        width: 240px;
+        width: 180px;
         display: block;
     }
-} */
+}
 
-@media (min-width: 86em) {
+@media (min-width: 85em) {
     .toc {
         width: 200px;
         display: block;
