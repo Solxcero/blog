@@ -118,7 +118,7 @@ pre::-webkit-scrollbar-track {
 
 .toc {
     position: fixed;
-    top: 100px;
+    top: 200px;
     right: 10px;
     width: 200px;
     overflow-y: auto;
@@ -132,7 +132,9 @@ pre::-webkit-scrollbar-track {
     display: none;
 }
 
-
+.toc.toc-visible {
+    display: block; /* 특정 위치 이후부터 표시 */
+}
 
 @media (min-width: 75em) {
     .toc {

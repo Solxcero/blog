@@ -66,6 +66,7 @@
 
      <!-- ScrollSpy Script -->
      <script>
+        // ScrollSpy 및 목차 표시 스크립트
         function debounce(func, wait) {
             let timeout;
             return function() {
@@ -74,10 +75,16 @@
                 timeout = setTimeout(() => func.apply(context, args), wait);
             };
         }
+
         document.addEventListener('DOMContentLoaded', function() {
+            var toc = document.querySelector('.toc');
             var tocLinks = document.querySelectorAll('.toc a');
             var sections = [];
 
+            // 콘텐츠 시작 지점 (목차를 나타낼 기준)
+            var contentStart = document.querySelector('article').offsetTop;
+
+            // 각 목차 항목에 해당하는 섹션을 찾고 배열에 추가
             tocLinks.forEach(function(link) {
                 var href = link.getAttribute('href');
                 if (href && href.startsWith("#")) {
@@ -91,6 +98,14 @@
             function onScroll() {
                 var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
 
+                // 목차 표시 여부 결정
+                if (scrollPosition >= contentStart - 100) {
+                    toc.classList.add('toc-visible');
+                } else {
+                    toc.classList.remove('toc-visible');
+                }
+
+                // 목차 항목 활성화 상태 업데이트
                 sections.forEach(function(current) {
                     var sectionTop = current.section.offsetTop - 10; // 섹션의 상단 위치
                     var sectionHeight = current.section.offsetHeight;
@@ -107,7 +122,7 @@
             // 페이지가 처음 로드될 때 스크롤 위치에 따라 활성화
             onScroll();
 
-            window.addEventListener('scroll', onScroll);
+            window.addEventListener('scroll', debounce(onScroll, 100));
             
             // 목차 항목 클릭 시 스크롤 이벤트와 충돌 방지
             tocLinks.forEach(function(link) {
@@ -119,6 +134,7 @@
                 });
             });
         });
+
 
   </script>
   
