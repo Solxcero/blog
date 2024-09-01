@@ -134,7 +134,7 @@ pre::-webkit-scrollbar-track {
 
 
 
-@media (min-width: 80em) {
+@media (min-width: 75em) {
     .toc {
         width: 180px;
         display: block;
