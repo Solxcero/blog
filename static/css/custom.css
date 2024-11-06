@@ -185,7 +185,7 @@ pre::-webkit-scrollbar-track {
     font-size: 0.9rem !important;
     opacity: 100% !important;
     border-left: 3px solid #00b8d4 !important; /* 여기서 두께와 색상을 설정합니다 */
-    padding-left: 0.4rem; /* 텍스트가 border와 너무 가까워지지 않도록 패딩을 조절 */
+    padding-left: 0.75rem; /* 텍스트가 border와 너무 가까워지지 않도록 패딩을 조절 */
 }
 
 
