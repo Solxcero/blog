@@ -18,8 +18,8 @@ body {
 }
 
 main.px-8{
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 body::-webkit-scrollbar {
@@ -183,9 +183,11 @@ pre::-webkit-scrollbar-track {
     font-weight: bold !important; 
     transition: all 0.125s ease-in 0s;
     font-size: 0.9rem !important;
-    /* color: #00b8d4 !important; */
     opacity: 100% !important;
+    border-left: 3px solid #00b8d4 !important; /* 여기서 두께와 색상을 설정합니다 */
+    padding-left: 0.4rem; /* 텍스트가 border와 너무 가까워지지 않도록 패딩을 조절 */
 }
+
 
 .toc ul {
     list-style-type: none;
@@ -215,4 +217,12 @@ pre::-webkit-scrollbar-track {
 .absolute:hover{
     transform: translateY(-5px); /* 호버 시 약간 위로 올라가는 효과 */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* 호버 시 그림자 강화 */
+}
+
+.absolute a{
+    display: block; /* 링크가 박스를 전체 덮도록 설정 */
+    padding-left: 24px; /* 왼쪽에 여백 추가 */
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 16px; /* 필요시 다른 패딩도 조절 가능 */
 }
