@@ -130,7 +130,7 @@ pre::-webkit-scrollbar-track {
     padding-top: 0.1rem;
     padding-bottom: 0.1rem;
     margin-right: 0px;
-    border-left: 2px solid #e0d9e7;  
+    /* border-left: 2px solid #e0d9e7;   */
     display: none;
 }
 
@@ -204,28 +204,6 @@ pre::-webkit-scrollbar-track {
     margin-bottom: 0 !important;
 }
 
-
-.toc li {
-    padding-left: 1rem; /* 왼쪽 간격 */
-    margin: 0.2rem 0; /* 위아래 간격 */
-}
-
-.toc li a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    padding: 0.3rem 0; /* 상하 여백 */
-    border-left: 2px solid transparent; /* 기본 선은 투명 */
-    transition: all 0.2s ease; /* 애니메이션 효과 */
-}
-
-/* 활성화된 TOC 항목 스타일 */
-.toc li a.toc-active {
-    font-weight: bold; /* 굵은 글씨 */
-    color: #000; /* 텍스트 색상 */
-    border-left: 4px solid rgb(0, 212, 239) !important;; /* 활성화된 항목의 두꺼운 왼쪽 선 */
-    padding-left: 0.75rem; /* 텍스트와 강조선 사이 간격 */
-}
 
 .absolute {
     position: absolute;
