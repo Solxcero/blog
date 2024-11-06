@@ -116,8 +116,7 @@ pre::-webkit-scrollbar-track {
     justify-content: space-between;
 }
 
-
-
+/* toc style */
 .toc {
     position: fixed;
     top: 200px;
@@ -204,7 +203,7 @@ pre::-webkit-scrollbar-track {
     margin-bottom: 0 !important;
 }
 
-
+/* 글 목록 박스처리 */
 .absolute {
     position: absolute;
     background-color: #e9e9e912;
@@ -241,3 +240,19 @@ pre::-webkit-scrollbar-track {
     line-height: 1.25rem;
     opacity: .6;
 }
+
+/* 글 색 */
+article {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    line-height: 1.8;
+    --tw-text-opacity: 1;
+    color: rgb(33 33 33 / var(--tw-text-opacity));
+  }
+
+
+:is(:where(.dark) article) {
+    --tw-text-opacity: 1;
+    color: rgb(200 200 200 / var(--tw-text-opacity));
+  }
+  
