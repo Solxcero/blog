@@ -116,7 +116,17 @@ pre::-webkit-scrollbar-track {
     justify-content: space-between;
 }
 
+
+
+/* 기본 TOC 스타일 */
 .toc {
+    list-style-type: none; /* 목록 스타일 제거 */
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+    color: #333;
+}
+/* .toc {
     position: fixed;
     top: 200px;
     right: 80px;
@@ -130,7 +140,7 @@ pre::-webkit-scrollbar-track {
     margin-right: 0px;
     border-left: 2px solid #e0d9e7;  
     display: none;
-}
+} */
 
 .toc.toc-visible {
     display: block; /* 특정 위치 이후부터 표시 */
@@ -147,7 +157,7 @@ pre::-webkit-scrollbar-track {
 @media (min-width: 85em) {
     .toc {
         right:30px;
-
+        
         width: 200px;
         display: block;
     }
@@ -160,7 +170,7 @@ pre::-webkit-scrollbar-track {
         display: block;
     }
 }
-
+/* 
 .toc p{
     margin-top:0.1em !important;
     margin-bottom: 0.1em !important;
@@ -184,8 +194,8 @@ pre::-webkit-scrollbar-track {
     transition: all 0.125s ease-in 0s;
     font-size: 0.9rem !important;
     opacity: 100% !important;
-    border-left: 3px solid #00b8d4 !important; /* 여기서 두께와 색상을 설정합니다 */
-    padding-left: 0.75rem; /* 텍스트가 border와 너무 가까워지지 않도록 패딩을 조절 */
+    border-left: 3px solid #00b8d4 !important; 
+    padding-left: 0.75rem;
 }
 
 
@@ -200,6 +210,29 @@ pre::-webkit-scrollbar-track {
     padding-left: .5rem;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
+} */
+
+
+.toc li {
+    padding-left: 1rem; /* 왼쪽 간격 */
+    margin: 0.2rem 0; /* 위아래 간격 */
+}
+
+.toc li a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 0.3rem 0; /* 상하 여백 */
+    border-left: 2px solid transparent; /* 기본 선은 투명 */
+    transition: all 0.2s ease; /* 애니메이션 효과 */
+}
+
+/* 활성화된 TOC 항목 스타일 */
+.toc li a.toc-active {
+    font-weight: bold; /* 굵은 글씨 */
+    color: #000; /* 텍스트 색상 */
+    border-left: 4px solid rgb(0, 212, 239) !important;; /* 활성화된 항목의 두꺼운 왼쪽 선 */
+    padding-left: 0.75rem; /* 텍스트와 강조선 사이 간격 */
 }
 
 .absolute {
