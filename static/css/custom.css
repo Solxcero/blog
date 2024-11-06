@@ -218,17 +218,23 @@ pre::-webkit-scrollbar-track {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* 호버 시 그림자 강화 */
 }
 
-.prose :where(h2):not(:where([class~=not-prose],[class~=not-prose] *)) {
-    color: var(--tw-prose-headings);
-    /* font-weight: 700; */
+.post-title {
+    line-height: 1 !important;
+    font-weight: 700;
     font-size: 1.2em;
     padding-left: 24px;
+    padding-bottom: .25rem;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
     /* margin-top: 2em; */
     /* margin-bottom: 1em; */
     /* line-height: 1.3333333; */
 }
 
-.prose :where(h2+*):not(:where([class~=not-prose],[class~=not-prose] *)) {
+.post-date {
     margin-top: 0;
     margin-left: 24px;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    opacity: .6;
 }
