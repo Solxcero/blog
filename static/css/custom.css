@@ -22,6 +22,12 @@ main.px-8{
     padding-right: 2rem;
 }
 
+main.px-7{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+
 body::-webkit-scrollbar {
     width: 14px;
     height: 14px;
