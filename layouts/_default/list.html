@@ -57,6 +57,14 @@
   <time class="post-date"
     >{{ .Date | time.Format ":date_medium" }}</time
   >
+    <!-- 카테고리 이름 추가 부분 -->
+  {{ with .Params.categories }}
+    <span class="post-category">  #
+      {{ range $index, $cat := . }}
+      {{ if $index }}, {{ end }}{{ $cat }}
+    {{ end }}
+    </span>
+  {{ end }}
   <a class="absolute inset-0 text-[0]" href="{{ .Permalink }}">{{ .Title }}</a>
 </section>
 {{ end }}
