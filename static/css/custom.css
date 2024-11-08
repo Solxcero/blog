@@ -122,8 +122,8 @@ pre::-webkit-scrollbar-track {
 
 
 ::selection{
-    background: rgba(0, 136, 255, 0.69);
-    color: #221100;
+    background: rgb(163 163 163 / 43%);
+    color: #0a81fa;
  }
 
 /* 목차테이블 추가 */
