@@ -283,10 +283,29 @@ article blockquote {
     border-left: 0;
     /* border-left-width: 3px !important; */
     --tw-border-opacity: 1 !important;
-    background-color: #007bff29;
+    background-color: #007bff37;
     font-weight: normal;
-    padding: 10px;
     border-radius: 0.4em;
-    padding: 0.1em 1.2em !important;
-    border-radius: 0.4rem;
+    padding: 0.1rem 1rem;                  /* 내부 여백 */
+    border-radius: 8px;             /* 모서리 둥글게 */
+    position: relative;             /* ::before 요소 위치 조정 */
+    font-size: 15px;                /* 글자 크기 */
+    line-height: 1.6;               /* 줄 간격 */
+}
+
+/* 아이콘 추가 */
+blockquote::before {
+    content: "🤔";                 /* Unicode를 사용하여 '정보' 느낌표 추가 */
+    font-size: 1.3rem;              /* 아이콘 크기 */
+    color: #001ee3;                 /* 아이콘 색상 */
+    position: absolute;             /* 위치를 고정 */
+    top: 40%;                       /* blockquote 높이의 중간에 배치 */
+    left: 1rem;                     /* 왼쪽 여백 */
+    transform: translateY(-50%);    /* 수직 가운데 정렬 */
+}
+
+/* 아이콘과 텍스트 간 여백 */
+blockquote p {
+    margin: 0;                      /* 기본 여백 제거 */
+    padding-left: 2.4rem;             /* 아이콘과 텍스트 사이 여백 추가 */
 }
