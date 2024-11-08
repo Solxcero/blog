@@ -44,7 +44,7 @@ title = 'Ahora'
     lineNumbersInTable = true
     noClasses = true
     noHl = false
-    style = 'native'   #native
+    #style = 'native'   #native
     tabWidth = 4
 
 [menu]
