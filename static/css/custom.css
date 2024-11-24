@@ -2,19 +2,17 @@
 
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700,800');
 
-
-
 p {
-    font-size: 16px;
+    font-size: 15px;
 }
 
 li {
-    font-size: 16px;
+    font-size: 15px;
 }
 
 body {
     font-family: 'Noto Sans KR';
-
+    letter-spacing: -0.3px;
 }
 
 main.px-8{
@@ -122,8 +120,8 @@ pre::-webkit-scrollbar-track {
 
 
 ::selection{
-    background: rgb(163 163 163 / 43%);
-    color: #0a81fa;
+    background: rgba(0, 0, 0, 0.849);
+    color: #00b8d4;
  }
 
 /* 목차테이블 추가 */
@@ -313,3 +311,32 @@ blockquote p, h3{
 blockquote ul{
     margin-left: 2.4rem;
 }
+
+/* 카테고리 네모 박스 스타일 */
+.post-categories {
+    display: flex;
+    flex-wrap: wrap; /* 여러 줄로 넘어가게 설정 */
+    gap: 0.5rem;     /* 각 박스 사이 간격 */
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .category-box {
+    display: inline-block;
+    padding: 0.08rem 0.4rem;  /* 박스 안 여백 */
+    background-color: #c9c9c926; /* 연한 배경색 */
+    color: #00b8d4;          /* 텍스트 색상 */
+    font-size: 0.8rem;       /* 텍스트 크기 */
+    font-weight: 600;        /* 글씨 굵기 */
+    text-decoration: none;   /* 밑줄 제거 */
+    /* border: 1px solid #c9c9c926; /* 테두리 색상 */
+    border-radius: 0.5rem;    /* 모서리 둥글게 */
+    transition: all 0.3s ease;
+  }
+  
+  .category-box:hover {
+    background-color: #00b8d4; /* 호버 시 배경색 변경 */
+    color: white;             /* 호버 시 텍스트 색상 변경 */
+    /* border-color: #c9c9c926;    /* 테두리 색상 변경 */
+  }
+  

@@ -4,16 +4,13 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         renderMathInElement(document.body, {
-          // customised options
-          // • auto-render specific keys, e.g.:
           delimiters: [
-              {left: '$$', right: '$$', display: true},
-              {left: '$', right: '$', display: false},
-              {left: '\\(', right: '\\)', display: false},
-              {left: '\\[', right: '\\]', display: true}
+              {left: '$$', right: '$$', display: true}, // 블록 수식
+              {left: '$', right: '$', display: false},  // 인라인 수식
+              {left: '\\(', right: '\\)', display: false} // 대체 인라인 수식
           ],
-          // • rendering keys, e.g.:
-          throwOnError : false
+          throwOnError: false,
+          ignoreTags: ["script", "noscript", "style", "textarea", "pre", "code"] // 무시할 태그
         });
     });
 </script>

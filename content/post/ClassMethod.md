@@ -2,7 +2,7 @@
 title = '드디어 @classmethod를 써본다'
 date = 2024-11-01T10:45:44+09:00
 tags = []
-categories = ["DailyCoding"]
+categories = ["DevLog"]
 +++
 
 배운 것을 실제로 내가 하고자하는 일에 적용했을 때의 쾌감이란 
