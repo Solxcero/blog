@@ -340,3 +340,35 @@ blockquote ul{
     /* border-color: #c9c9c926;    /* 테두리 색상 변경 */
   }
   
+/* back-to-top */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #00b8d4; /* 파란색 배경 */
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    z-index: 1000;
+    padding: 10px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  #back-to-top a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+  }
+  
+  #back-to-top:hover {
+    transform: scale(1.1);
+  }
+  
+  #back-to-top svg {
+    fill: white;
+    width: 24px;
+    height: 24px;
+  }
+  
