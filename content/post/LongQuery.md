@@ -1,7 +1,7 @@
 +++
 title = 'My Longest Query So Far'
 date = 2024-12-02T18:48:04+09:00
-draft = true
+draft = false
 categories = ["DevLog"]
 +++
 
@@ -68,10 +68,21 @@ ORDER BY
 
 
 ## CASE WHEN 쓰셨구요
+trend change 데이터가 있는 경우 그 값을 그대로 가져오되,  
+함께 뽑히는 앞 뒤 구간 데이터에는 Null 로 들어가게 하기 위해서다.
+CASE WHEN을 안쓰고 뽑으면 trend change 전체 구간에 해당 값이 다 들어가서 
+원래 어느 TimeStamp에 change. 알람이 왔는지 구분할 수가 없다.   
 
+이건 데이터 형태를 모르면 무슨말인지 이해가 잘 안될테지만, 나는 알고있으므로 괜츈.
 
 ## DATE_SUB 와 DATE_ADD 대신 INTERVAL
+원래는 DATE_SUB 랑 DATE_ADD 썼는데, INTERVAL 이 더 가독성 좋아보여서 바꿨다.  
+동적 연산에 주로 사용되는 방식으로 내가 찾아봤을 땐 기능적으로는 큰 차이가 없어보였다. 
 
 ## DENSE_RANK() 정처기에서 봤는데
+정처기 실기 시험 준비하면서 공부했던 RANK 함수를 드뎌 써봤당. 
+'순위'라는 개념이 필요해서는 아니고 각 change 그룹마다 번호를 부여해야하는데, 같은 그룹끼리는 동일한 번호를 주기 위해 DENSE_RANK를 썼다.
 
-
+## 진짜 별거없는 결론
+암튼 내 인생 가장 길었던 쿼리~  
+쿼리 짜는거 재밌어서 앞으로도 실무에 계속 써먹으면서 실력 키울 수 있으면 좋겠당 
