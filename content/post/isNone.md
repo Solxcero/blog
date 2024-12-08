@@ -1,7 +1,7 @@
 +++
 title = '왜 is None인가'
 date = 2024-12-07T18:12:53+09:00
-draft = true
+draft = false
 categories = ["DevLog"]
 +++
 
@@ -103,3 +103,6 @@ print(id(x) == id(y))   # True
 불변객체의 범위 혹은 길이가 길어지면 캐싱이 되지 않는데, 그건 인터프리터에 따라 다르다고 한다.  
 
 하나 또 알고 간다 ~!
+
+*Reference*  
+https://nephtyws.github.io/python/interning/
