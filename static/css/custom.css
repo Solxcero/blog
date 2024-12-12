@@ -303,7 +303,7 @@ blockquote::before {
 }
 
 /* 아이콘과 텍스트 간 여백 */
-blockquote p, h3{
+blockquote p{
     margin: 0;                      /* 기본 여백 제거 */
     padding-left: 2.4rem;             /* 아이콘과 텍스트 사이 여백 추가 */
 }

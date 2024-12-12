@@ -1,6 +1,6 @@
 url = 'https://Solxcero.github.io'
 baseURL = ''
-paginate = 5
+paginate = 10
 languageCode = 'en-us'
 theme = "paper"
 title = '漸入佳境'
