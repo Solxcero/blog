@@ -2,7 +2,7 @@
 title = 'NP Hard'
 date = 2025-01-05T11:26:51+09:00
 draft = false
-categories = ["Dev"]
+categories = ["DevLog"]
 +++
 
 ## 🎅흥미로운 주제 발견
