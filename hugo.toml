@@ -17,6 +17,8 @@ title = '漸入佳境'
   name = '덕후의 즐거운 인생'
   bio = '좋아하는 것만 하고 살면 얼마나 좋게요'
   math = true
+  customCSS = ["css/custom.css"]
+  customJS = ["js/toc-observer.js"]
 
 
 # ------------------------------

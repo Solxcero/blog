@@ -147,6 +147,7 @@ pre::-webkit-scrollbar-track {
     display: none;
 }
 
+
 .toc.toc-visible {
     display: block; /* 특정 위치 이후부터 표시 */
 }
@@ -269,12 +270,24 @@ article {
     --tw-text-opacity: 1;
     color: rgb(33 33 33 / var(--tw-text-opacity)) !important;
   }
+  .prose :where(strong):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    color:  rgb(33 33 33 / var(--tw-text-opacity)) !important;
+    font-weight: 600;
+  }
 
-
-:is(:where(.dark) article) {
+  .dark :is(:where(article)) {
     --tw-text-opacity: 1;
     color: rgb(200 200 200 / var(--tw-text-opacity)) !important;
   }
+  
+  .dark .prose :where(strong):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    color: rgb(200 200 200 / var(--tw-text-opacity)) !important;
+    font-weight: 600;
+  }
+
+.prose :where(hr):not(:where([class~=not-prose],[class~=not-prose] *)) {
+    margin-bottom: 1.5em;
+}
   
 /* blockquote */
 article blockquote {
