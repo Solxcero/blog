@@ -377,7 +377,7 @@ nw['W(G,X)'] = nw['D(V,X)']/(nw['D(G,X)']+nw['D(V,X)'])
 
 또한 날짜와 마켓명만 입력하면 최종 스캐터가 생성되는 소스코드 링크도 같이 첨부하겠다.
 
-<span style="display: flex; align-items: center; font-size: 14px;"">
+<span style="display: flex; align-items: center; font-size: 14px;">
   <span>소스코드(ipynb) :</span>
   <a href="https://github.com/Solxcero/my-domains/blob/main/Finance/6.StyleInvestment.ipynb" style="margin-left: 5px;">
     <img src="/images/github.png" alt="GitHub" style="width: 20px; height: 20px;">
