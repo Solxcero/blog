@@ -19,17 +19,6 @@ categories = ["Investment"]
 
 라고 보면 된다.  
 
-<span style="display: flex; align-items: center;">
-  <span>소스코드 :</span>
-  <a href="https://github.com/Solxcero/my-domains/blob/main/economy/StyleInvestment.ipynb" style="margin-left: 5px;">
-    <img src="/images/github.png" alt="GitHub" style="width: 20px; height: 20px;">
-  </a>
-  <span>&nbsp;&nbsp;|&nbsp;프로젝트 Repo :</span>
-  <a href="https://github.com/Solxcero/ubion-3rd/tree/main/Project1" style="margin-left: 5px;">
-    <img src="/images/github.png" alt="GitHub" style="width: 20px; height: 20px;">
-  </a>
-</span>
-
 ## 성장이 뭐죠? 가치는요?
 
 **성장주**의 핵심은 미래의 성장 가능성을 높게 평가하고, 주가 상승을 통해 수익을 실현하는 것   
@@ -381,23 +370,24 @@ nw['W(G,X)'] = nw['D(V,X)']/(nw['D(G,X)']+nw['D(V,X)'])
 티커 002350 만 가치그룹으로 분류되고 나머지는 전부 성장그룹으로 분류된 것을 알 수 있다. 
 삼성전자는 성장주로 분류된 것도 확인할 수 있다.  
 
-## 마무리...근데 마무리 아님.. 근데 이제 샤이니를 곁들인...
+## 마무리.
 주가 정보는 매일 빠르게 변화하며 시장의 움직임을 보여주는 데이터이다. 이번 작업을 통해 금융시장의 움직임을 성장점수, 가치점수, 성장그룹, 가치그룹이라는 지표로 압축해 볼 수 있었다. 
 결국 지표라는 것은 대표성을 띄는 것이 중요하다고 생각한다. 지표명과 그 지표에 속해있는 요소들의 특성이 일치한다면 잘 만든 지표라고 할 수 있을 거다.   
 과거 프로젝트를 진행할 당시에도 이 같은 창의적인 접근이 매우 흥미로웠었기에 이번에 날짜와 그래프를 업데이트하여 다시 구현해보았다. 
-이번 게시글에서는 스타일 분류까지 진행했는데, 실제로 스타일 지수도 만들어볼 수 있다. 이 과정은 다음 게시글에서 다루기로 하겠다.  
 
-뜬금없긴 하지만 스타일 지수 작업을 하다보니 샤이니 덕질하던 때가 생각이 났다.  
-멤버 전원이 노래실력+춤실력+외모 조건을 충족한 샤이니...  
-샤이니라는 지표가 있고 멤버들이 그 안의 요소라고 생각하면 이건 절대 망하지 않는 투자이다. 🤭  
-실제로 나는 샤이니 데뷔 후 15년 동안 정말 행복한 덕질을 했고 여전히 덕질 이어가는 중이다.!!
+또한 날짜와 마켓명만 입력하면 최종 스캐터가 생성되는 소스코드 링크도 같이 첨부하겠다.
 
-다들 샤이니월드 했으면 좋겠다. 
-<p align="center">
-  <a href="/images/Investment/shinee.jpg" data-lightbox="image-set">
-    <img src="/images/Investment/shinee.jpg" alt="Your Alt Text" >
+<span style="display: flex; align-items: center;">
+  <span>소스코드(ipynb) :</span>
+  <a href="https://github.com/Solxcero/my-domains/blob/main/Finance/6.StyleInvestment.ipynb" style="margin-left: 5px;">
+    <img src="/images/github.png" alt="GitHub" style="width: 20px; height: 20px;">
   </a>
-  <em> 영원한 나의 우상, 동경하는 샤이니</em>
-</p>
-
-
+  <span>&nbsp;&nbsp;|&nbsp;소스코드(Scatter) :</span>
+  <a href="https://github.com/Solxcero/my-domains/blob/main/Finance/styleInvest.py" style="margin-left: 5px;">
+    <img src="/images/github.png" alt="GitHub" style="width: 20px; height: 20px;">
+  </a>
+  <span>&nbsp;&nbsp;|&nbsp;프로젝트 Repo :</span>
+  <a href="https://github.com/Solxcero/ubion-3rd/tree/main/Project1" style="margin-left: 5px;">
+    <img src="/images/github.png" alt="GitHub" style="width: 20px; height: 20px;">
+  </a>
+</span>
