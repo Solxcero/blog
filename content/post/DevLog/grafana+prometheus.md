@@ -13,13 +13,24 @@ categories = ["DevLog"]
 ## 시스템 구성도
 > MySQL ➡️ MySQL Exporter ➡️ Prometheus ➡️ Grafana  
 
+| 구성요소           | 역할                                        |
+| -------------- | ----------------------------------------- |
+| **MySQL**      | 실제 데이터베이스                                 |
+| **Exporter**   | MySQL에서 성능 정보 추출 + HTTP 형식으로 노출           |
+| **Prometheus** | Exporter로부터 데이터를 주기적으로 수집 + 저장            |
+| **Grafana**    | Prometheus에서 데이터를 읽어와서 시각화 (Dashboard 형태) |
+
+
 그라파나로 MySQL의 성능을 모니터링하려면 `MySQL Exporter` 를 사용해 메트릭을 수집한 다음,  
 `Prometheus`로 저장한 뒤, 이를 `Grafana` 대시보드로 시각화하는 방식이 일반적이다. 
 
 
+MySQL은 자체적으로 성능을 확인할 수 있도록 `show status` 나 `information_schema` 를 제공하지만, 외부 모니터링 시스템이 직접 접근해서 수집하기 어렵다.  
+따라서 MySQL에서 쿼리를 실행 후 메트릭 데이터를 HTTP로 노출해주는 exporter 를 사용한다.  
+프로메테우스는 이 HTTP 엔드포인트(`localhost:9104/metrics`)에 정기적으로 접근해서 데이터를 수집하는 기능을 한다.  
+
 ## 환경 세팅
 ### 1. MySQL Exporter` 설치 및 설정
-
 Exporter의 경우 Windows 사용자는 WSL, Docker, Go 세 가지 환경 중 하나를 골라서 Exporter를 설치하면 된다. 나는 이전에 설치해둔 WSL에 Exporter를 설치했다.  (대부분 Docker를 쓰는듯 하다.)  
 
 아래의 명령어로 간편하게 설치 및 압축해제 할 수 있다.  

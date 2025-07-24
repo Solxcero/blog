@@ -53,7 +53,7 @@ code {
     background-color: #b2b2b214; /* 배경색 */
     color : rgb(216, 67, 67) !important ;
     margin:0; /* 여백 설정 */
-    font-size: 0.8rem; /* 폰트 크기 */
+    font-size: 0.8rem ; /* 폰트 크기 */
     border-radius: 4px; /* 모서리 둥글게 */
     /*border: 1px solid #ccc;*/ /* 테두리 설정 */
 }
