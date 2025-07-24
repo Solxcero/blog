@@ -88,6 +88,11 @@ pre {
     overflow: auto; /* 가로 및 세로 스크롤바 표시 */
 }
 
+article .highlight {
+    margin-top: 0rem !important;
+    margin-bottom: 0rem !important;
+}
+
 article .highlight pre {
     margin-top: 0px;
     margin-bottom: 0px;
