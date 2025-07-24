@@ -1,11 +1,11 @@
 +++
-title = '[토이]증권 거래 시스템 DB 설계 및 운영'
+title = '증권 거래 시스템 DB 설계 및 운영(1)'
 date = 2025-07-24T14:17:38+09:00
 draft = true
 categories = ["projcets"]
 +++
 
-직접 수행한 사이드 프로젝트입니다. 
+토이 프로젝트입니다. 
 
 ## 기획 배경 및 목적
 - DB 운영팀 실무에 직접 연관되는 데이터베이스 구축, 설계, 운영 자동화, 성능 모니터링 등의 경험을 빠르게 축적.
@@ -51,3 +51,10 @@ categories = ["projcets"]
     <img src="/images/projects/stock_db/ERD.png" alt="Your Alt Text" >
   </a>
 </p>
+
+주요 설명을 하자면,  
+하나의 `user_id` 는 여러 개의 `accounts` 를 가질 수 있다. (1:N)  
+한 계좌는 여러 개의 `orders`(주문)를 생성할 수 있다. (1:N)  
+한 계좌는 여러 개의 `positions`(보유 종목)를 가질 수 있다. (1:N)  
+`user_id` 는 `users` 와 (N:1)로 연결된다.  
+
