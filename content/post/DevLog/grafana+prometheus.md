@@ -29,7 +29,8 @@ MySQL은 자체적으로 성능을 확인할 수 있도록 `show status` 나 `in
 따라서 MySQL에서 쿼리를 실행 후 메트릭 데이터를 HTTP로 노출해주는 exporter 를 사용한다.  
 프로메테우스는 이 HTTP 엔드포인트(`localhost:9104/metrics`)에 정기적으로 접근해서 데이터를 수집하는 기능을 한다.  
 
-### 1. MySQL Exporter 설치 및 설정
+
+## MySQL Exporter 설치 및 설정
 Exporter의 경우 Windows 사용자는 WSL, Docker, Go 세 가지 환경 중 하나를 골라서 Exporter를 설치하면 된다. 나는 이전에 설치해둔 WSL에 Exporter를 설치했다.  (대부분 Docker를 쓰는듯 하다.)  
 
 아래의 명령어로 간편하게 설치 및 압축해제 할 수 있다.  
@@ -42,7 +43,7 @@ cd mysqld_exporter-*
 ```
 이 프로그램을 실행하면 하나의 HTTP 서버처럼 동작하게 된다. 
 
-### 2. MySQL 계정생성
+## MySQL 계정생성
 MySQL에서 exporter 계정을 생성해주어야 한다. 
 ```sql
 CREATE USER 'exporter'@'%' IDENTIFIED BY 'yourpassword';
@@ -50,7 +51,7 @@ GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO 'exporter'@'%';
 ```
 `exporter`와 `yourpassword`에 개인 정보를 입력한 후 한 줄씩 실행하면 된다. 
 
-### 3. WSL 에서 `.my.cnf` 파일 설정
+## WSL 에서 `.my.cnf` 파일 설정
 mysql_exporter가 MySQL에 접속하기 위해서는 사용자 계정이 필요하고, ReadOnly 권한만 있으면 된다. (SELECT, PROCESS, REPLICATION CLIENT)
 > exporter 계정은 모니터링 목적이므로 `INSERT`, `DELETE`, `DROP` 등의 권한은 절대 주지 않는다. 
 
@@ -78,7 +79,7 @@ chmod 600 ~/.my.cnf
 ```
 상대경로 or 절대경로
 
-### 4. Prometheus 설정
+## Prometheus 설정
 
 [https://prometheus.io/download](https://prometheus.io/download)  
 위 링크에서 OS에 맞는 프로메테우스를 다운받은 후 압축을 해제한다. 
@@ -108,7 +109,7 @@ prometheus.exe --config.file=prometheus.yml
 
 이렇게 mysql이 up 상태이면 설정 완료. 
 
-### 5. Grafana
+## Grafana 설정
 [https://grafana.com/grafana/download](https://grafana.com/grafana/download)  
 여기서 본인 컴터에 맞는 그라파나를 다운로드 한다. 
 
@@ -130,7 +131,7 @@ Dashboards > + Import > ID : 7362 입력 > Load > Import
 아직은 DB를 사용하지 않아 아무 데이터가 없다. 
 
 
-### 최종 정리 
+## 최종 정리 
 전체 구성을 표로 정리해봤다. (내 컴터 기준)
 | 구성 요소                | 역할                      | 설정 위치      |
 | -------------------- | ----------------------- | ---------- |
