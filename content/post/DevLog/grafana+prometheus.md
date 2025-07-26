@@ -51,6 +51,20 @@ GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO 'exporter'@'%';
 ```
 `exporter`와 `yourpassword`에 개인 정보를 입력한 후 한 줄씩 실행하면 된다. 
 
+현재 나의 환경은 MySQL 서버가 Windows에 설치되어 있기 때문에 한 가지를 더 수정해야 한다.  
+C:\ProgramData\MySQL\MySQL Server 8.0\my.ini   경로에서 [mysqld] 부분을 찾아 bind-address를 추가한다.(모든 ip 접근 허용)
+```txt
+[mysqld]
+bind-address=0.0.0.0
+```
+
+또한 3306의 포트를 열기 위해 powershell을 관리자 권한으로 실행하여 아래 명령어를 입력한다.
+```shell
+New-NetFirewallRule -DisplayName "Allow MySQL" -Direction Inbound -Protocol TCP -LocalPort 3306 -Action Allow
+```
+(윈도우 방화벽 설정가서 해도됨)
+
+
 ## WSL 에서 `.my.cnf` 파일 설정
 mysql_exporter가 MySQL에 접속하기 위해서는 사용자 계정이 필요하고, ReadOnly 권한만 있으면 된다. (SELECT, PROCESS, REPLICATION CLIENT)
 > exporter 계정은 모니터링 목적이므로 `INSERT`, `DELETE`, `DROP` 등의 권한은 절대 주지 않는다. 
@@ -63,8 +77,17 @@ mysql_exporter가 MySQL에 접속하기 위해서는 사용자 계정이 필요�
 ```bash
 echo -e "[client]\nuser=exporter\npassword=yourpassword" > ~/.my.cnf
 ```
+하지만 나의 경우 이렇게만 하면 연결이 안된다. 
+```txt
+[client]
+user=exporter
+password=yourpassword
+host=IPv4주소 
+port=3306
+```
+이렇게 IP 주소와 Port 정보까지 입력하니 연결이 됐다.
 
-해당 파일의 경우 `ls -a ~` 로 존재 여부를 확인할 수 있다.  
+해당 파일의 경우 `ls -a` 로 존재 여부를 확인할 수 있다.  
 
 그리고, 반드시 접근 권한을 제한해야 한다. 권한이 열려 있으면 exporter 실행 시 보안 오류가 발생하거나, MySQL접속이 거부 될 수 있다. 
 ```bash
