@@ -12,11 +12,11 @@ categories = ["projcets"]
 - 금융권 DB 운영 환경에서의 핵심 이슈(안정성, 보안, 실시간성, 장애 대응 등)를 체험할 수 있도록 설계.
 - DBA 직무에서 우대하는 요소들(모델링, 튜닝, 백업, 모니터링, 스크립트 등)을 프로젝트 안에 통합.
 
-| 항목| 설명|
-| ------ | ----- |
-| 주요 기술  | MariaDB/PostgreSQL, Python, Shell, SQL, ERDCloud(DB 모델링), Grafana or Prometheus(모니터링), Linux(Ubuntu VM) |
-| 목표| 주식 주문 처리/조회 시스템의 데이터베이스를 직접 설계하고 운영환경을 구성, 자동화, 성능 분석 |
-| 형태&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 개인 프로젝트 (가능하면 GitHub 공개 및 블로그 정리 병행)  |
+|항목&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 설명|
+| -------- | ----- |
+|   주요 기술 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|MariaDB/PostgreSQL, Python, Shell, SQL, ERDCloud(DB 모델링), Grafana or Prometheus(모니터링), Linux(Ubuntu VM)|
+|   목표&nbsp;&nbsp;&nbsp;&nbsp;         |주식 주문 처리/조회 시스템의 데이터베이스를 직접 설계하고 운영환경을 구성, 자동화, 성능 분석|
+|   형태&nbsp;&nbsp;&nbsp;&nbsp;         |개인 프로젝트 (가능하면 GitHub 공개 및 블로그 정리 병행) |
 
 ## 기능 구성
 1. 기초 설계 및 구축
@@ -45,16 +45,19 @@ categories = ["projcets"]
 
 ## DB 설계 
 
-증권거래 시스템에서 필요할 것으로 생각되는 정보들을 취합하여 스키마를 제작했다.  
+증권거래 시스템에서 필요할 것으로 생각되는 정보들을 취합한 ERM 
 <p align="center">
   <a href="/images/projects/stock_db/ERD.png" data-lightbox="image-set">
     <img src="/images/projects/stock_db/ERD.png" alt="Your Alt Text" >
   </a>
 </p>
 
-주요 설명을 하자면,  
-하나의 `user_id` 는 여러 개의 `accounts` 를 가질 수 있다. (1:N)  
-한 계좌는 여러 개의 `orders`(주문)를 생성할 수 있다. (1:N)  
-한 계좌는 여러 개의 `positions`(보유 종목)를 가질 수 있다. (1:N)  
-`user_id` 는 `users` 와 (N:1)로 연결된다.  
+| 요소                     | 의미                             |
+| ---------------------- | ------------------------------ |
+| `users ↔ accounts`     | 한 명의 고객이 여러 개의 계좌를 가질 수 있음     |
+| `accounts ↔ orders`    | 계좌 단위로 매수/매도 주문 발생             |
+| `orders ↔ trades`      | 주문이 체결되면 하나 이상의 체결 내역으로 연결됨    |
+| `accounts ↔ positions` | 계좌가 보유 중인 종목과 수량을 기록함          |
+| `stocks`               | 주문, 체결, 포지션에서 공통적으로 참조하는 주식 종목 |
+
 
