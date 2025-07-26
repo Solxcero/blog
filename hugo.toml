@@ -13,7 +13,7 @@ title = '漸入佳境'
   github = 'Solxcero'                 # github.com/YOUR_GITHUB_ID
 
   # home page profile
-  avatar = 'images/kodama.png' #'https://github.com/Solxcero/Solxcero.github.io/assets/99321739/4ccb5f75-725b-4360-b1d6-6b1c99072d56'   # gravatar email or image url
+  avatar = 'https://github.com/Solxcero/Solxcero.github.io/images/kodama.png' #'https://github.com/Solxcero/Solxcero.github.io/assets/99321739/4ccb5f75-725b-4360-b1d6-6b1c99072d56'   # gravatar email or image url
   name = '덕후의 즐거운 인생'
   bio = '좋아하는 것만 하고 살면 얼마나 좋게요'
   math = true
