@@ -85,3 +85,10 @@ title = '漸入佳境'
   projects = "projects"
 #  series = "series"
  
+[outputs]
+home = ["HTML", "JSON"]
+
+[outputFormats.JSON]
+mediaType = "application/json"
+baseName = "index"
+isPlainText = true
