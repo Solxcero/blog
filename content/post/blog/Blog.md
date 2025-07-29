@@ -2,6 +2,7 @@
 title = 'Hugo로 GitBlog 만들기'
 date = 2024-04-03T10:41:44+09:00
 categories = ["blog"]
+weight = 10
 +++
 
 ## Hugo 블로그. 

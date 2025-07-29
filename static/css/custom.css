@@ -391,3 +391,8 @@ blockquote ul{
     height: 24px;
   }
   
+.text-\[\#ff3b2d\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 59 45 / var(--tw-text-opacity));
+  margin-left : 1.5rem !important;
+}
