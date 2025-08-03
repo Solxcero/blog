@@ -88,7 +88,7 @@ title = '漸入佳境'
 [outputs]
 home = ["HTML", "JSON"]
 
-[outputFormats.JSON]
-mediaType = "application/json"
-baseName = "index"
-isPlainText = true
+#[outputFormats.JSON]
+#mediaType = "application/json"
+#baseName = "index"
+#isPlainText = true
