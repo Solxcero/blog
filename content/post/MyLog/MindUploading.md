@@ -1,7 +1,7 @@
 +++
 title = '마음 업로딩에 대한 생각'
 date = 2025-08-02T10:36:04+09:00
-draft = false
+draft = true
 categories = ['MyLog']
 +++
 

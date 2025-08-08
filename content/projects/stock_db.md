@@ -2,7 +2,7 @@
 title = '증권 거래 시스템 DB 설계 및 운영(1)'
 date = 2025-07-24T14:17:38+09:00
 draft = true
-categories = ["projcets"]
+categories = []
 +++
 
 토이 프로젝트입니다. 
