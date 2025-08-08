@@ -11,11 +11,12 @@ title = '漸入佳境'
 
   # header social icons
   github = 'Solxcero'                 # github.com/YOUR_GITHUB_ID
+  blog = 'https://sol-x-universe.tistory.com/'
 
   # home page profile
   avatar = 'https://github.com/Solxcero/Solxcero.github.io/blob/main/images/kodama.png?raw=true' #'https://github.com/Solxcero/Solxcero.github.io/assets/99321739/4ccb5f75-725b-4360-b1d6-6b1c99072d56'   # gravatar email or image url
   name = '덕후의 즐거운 인생'
-  bio = '좋아하는 것만 하고 살면 얼마나 좋게요'
+  bio = '좋아하는 것만 하고 살면 얼마나 좋게요.'
   math = true
   customCSS = ["css/custom.css"]
   customJS = ["js/toc-observer.js"]
@@ -78,6 +79,11 @@ title = '漸入佳境'
 #    name = "Archive"
 #    url = "/archives/"
 #    weight = 13
+
+  [[menu.main]]
+    name = "일상"
+    url = "https://sol-x-universe.tistory.com/"
+    weight = 15
 
 [taxonomies]
   category = "categories"
