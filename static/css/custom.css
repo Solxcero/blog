@@ -283,11 +283,11 @@ article {
 
   .dark :is(:where(article)) {
     --tw-text-opacity: 1;
-    color: rgb(200 200 200 / var(--tw-text-opacity)) !important;
+    color: rgb(221 221 221 / var(--tw-text-opacity)) !important;
   }
   
   .dark .prose :where(strong):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-    color: rgb(200 200 200 / var(--tw-text-opacity)) !important;
+    color: rgb(221 221 221 / var(--tw-text-opacity)) !important;
     font-weight: 600;
   }
 

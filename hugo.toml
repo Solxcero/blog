@@ -50,11 +50,17 @@ title = '漸入佳境'
 
 [menu]
 
- # [[menu.main]]
-    #identifier = "about"
-    #name = "About"
-    #url = "/about/"
-    #weight = 13
+#  [[menu.main]]
+#    identifier = "about"
+#    name = "About"
+#    url = "/about/"
+#    weight = 14
+
+#    [[menu.main]]
+#      identifier = "geek"
+#      name = "Geek"
+#      url = "/geek/"
+#      weight = 14
 
 #  [[menu.main]]
 #    identifier = "tags"
