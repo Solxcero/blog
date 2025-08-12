@@ -21,6 +21,9 @@ title = '漸入佳境'
   customCSS = ["css/custom.css"]
   customJS = ["js/toc-observer.js"]
 
+  mainSections = ["post", "projects"]
+
+
 
 # ------------------------------
  
