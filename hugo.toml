@@ -35,6 +35,8 @@ title = '漸入佳境'
     [markup.goldmark.renderer]
       unsafe = true  # HTML 태그를 허용하도록 설정
     [markup.goldmark.extensions]
+    [markup.smartypants]
+      quotes = false
 
   [markup.highlight]
     anchorLineNos = false
