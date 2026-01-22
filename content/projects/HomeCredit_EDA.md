@@ -1,19 +1,31 @@
 +++
 title = '🪪 HOME CREDIT #2:EDA'
 date = 2026-01-04T11:00:50+09:00
-draft = true
+draft = false
 categories = []
+tags = ['HomeCredit']
 +++
 
 가장 중요한 전처리 단계이다. 
 데이터의 품질이 모델의 성능을 결정하는 만큼, 그리고 모델의 설명 가능성이 매우 중요한 만큼,  
 데이터 전처리 과정에서 두뇌를 가장 많이 사용하였다.  
 
+## 데이터 확인
+데이터 설명 페이지 : [https://www.kaggle.com/competitions/home-credit-default-risk/data](https://www.kaggle.com/competitions/home-credit-default-risk/data)
 
-## 1차 제거 변수들 
+이번 실습에서는 `application.csv` 만 사용했다. 추후에 SK_ID_CURR을 기준으로 데이터들을 합쳐볼 예정이다. 
+
+TARGET의 부도/정상 비율은
+ 
+부도 비율: 8.07%    
+정상 비율: 91.93%   
+
+역시나 불균형이 심한 것을 알 수 있다. 
+
+## 분석 제외 변수
 122개의 컬럼 중 1차적으로 필요 없는 컬럼들은 제외시켰다.  
 
-### 결측치 비율로 변수 버리기
+1. 결측치 비율로 변수 버리기  
 결측치는 이후 따로 처리하지만 그 전에 결측치가 너무 많은 변수들은 미리 제외하려고 한다.   
 전체 데이터에서 결측 비율이 60% 이상인 변수들을 제외시켰다.  
 비율의 기준에 대해서는 보통 50% 이상이면 신뢰도 문제로 제외시킨다고 하는데,  
@@ -35,7 +47,7 @@ def drop_null_cols(df, threshold=0.6):
 # Dropped 6 columns: OWN_CAR_AGE, YEARS_BUILD_AVG, COMMONAREA_AVG, FLOORSMIN_AVG, LIVINGAPARTMENTS_AVG, NONLIVINGAPARTMENTS_AVG
 ```
 
-### 중복되는 집계 변수 제거
+2. 중복되는 집계 변수 제거   
 동일한 이름에 `_AVG`, `_MEDI`, `_MODE` 로 구분되어 있는 변수들이 있는데, 이들 중 `AVG` 변수들만 사용하기로 했다.   
 이때 `_MODE` 데이터를 제외할 때 주의할 점이 있는데, 중앙값을 의미하는 변수가 아닌 타입을 의미하는 `_MODE` 변수들이 있어서 이 변수들은 제외하지 않아야 한다.  
 
@@ -56,17 +68,16 @@ df.drop(columns=mode_medi_cols, inplace=True, errors='ignore')
 
 # 제거 제외 변수:['EMERGENCYSTATE', 'TOTALAREA', 'FONDKAPREMONT', 'WALLSMATERIAL', 'HOUSETYPE']
 ```
+
 초기에 122개에서 34개를 제외한 88개의 컬럼을 가지고 본격적인 전처리를 진행했다.  
 
 
-
-
-## 1차 변수 처리
+## 1차 변수 처리  {#remove-vars-1}
 데이터들과 변수 설명서를 읽으면서 따로 특별히 처리해줘야할 변수들은 없을까 고민해봤다.  
 
 그 결과 `_DAYS` 변수와 `FLAG_DOCUMENT` 변수는 나중에 분석에 더 용이하게 미리 별도 처리를 해주는 게 좋을 것 같다는 판단을 했다.  
 
-### _DAYS 데이터 변환 
+1. _DAYS 데이터 변환    
 이 데이터셋의 특징 중 하나는 날짜 관련 데이터이다.   
 DAYS_BIRTH, DAYS_REGISTRATION, DAYS_EMPLOYED 등 DAYS_로 시작하는 변수들이다.  
 "time only relative to the application" 이라고 설명되어 있고, 데이터들은 대체로 음수 형태이다.   
@@ -90,6 +101,7 @@ DAYS_BIRTH, DAYS_REGISTRATION, DAYS_EMPLOYED 등 DAYS_로 시작하는 변수들
 그리고 무직 여부를 파악하는 별도의 플래그 변수도 생성해줬다. 
 
 그렇게 수정된 데이터의 형태는 아래와 같다.  
+
 <p align="center">
   <a href="/images/projects/home_credit/days_after.png" data-lightbox="image-set">
     <img src="/images/projects/home_credit/days_after.png" alt="Your Alt Text" >
@@ -97,8 +109,7 @@ DAYS_BIRTH, DAYS_REGISTRATION, DAYS_EMPLOYED 등 DAYS_로 시작하는 변수들
 </p>
 
 
-
-### FLAG_DOCUMENT 처리
+2. FLAG_DOCUMENT 처리  
 데이터를 보면 `FLAG_DOCUMENT` 가 2부터 21까지 있는데(0:미제출, 1:제출), 저 문서들이 어떤 내용인지는 알 수가 없다.  
 그렇기에 저 문서들을 다 가지고 분석하는 것 보다는 개별 문서 제출 패턴들을 먼저 파악하는 게 좋겠다고 판단했다.  
 
@@ -155,6 +166,7 @@ print(f"새롭게 분류된 범주형 변수: {potential_cat_cols}")
 ## 변수 요약표
 
 먼저 범주형 변수들.  
+
 <p align="center">
   <a href="/images/projects/home_credit/home_credit_cat_sum.png" data-lightbox="image-set">
     <img src="/images/projects/home_credit/home_credit_cat_sum.png" alt="Your Alt Text" >
@@ -163,14 +175,17 @@ print(f"새롭게 분류된 범주형 변수: {potential_cat_cols}")
 
 
 그리고 수치형 변수들. 
+
 <p align="center">
   <a href="/images/projects/home_credit/home_credit_num_sum.png" data-lightbox="image-set">
     <img src="/images/projects/home_credit/home_credit_num_sum.png" alt="Your Alt Text" >
   </a>
 </p>
 
+
 ## 결측치
-이제 정말 중요한 결측치 처리. 
+이제 정말 중요한 결측치 처리.   
+
 
 ### 범주형
 범주형의 경우 결측값 자체도 의미가 있을 수 있다고 한다.  
@@ -221,6 +236,72 @@ Null인 그룹: 단순히 데이터 누락이 아니라, "정보가 없음(Unkno
 그 다음은 모델의 성능을 높이기 위해 파생변수를 생성했다.  
 이 부분은 다른 사례와 재미니의 도움을 좀 받았다.  
 
+```python
+#8. 파생변수 생성
+df['AGE'] = df['DAYS_BIRTH'] / 365
+df['YEARS_EMPLOYED'] = df['DAYS_EMPLOYED'] / 365
+df['REGISTRATION_BIRTH_RELA'] = df['DAYS_REGISTRATION'] / df['DAYS_BIRTH']
+df['ID_PUBLISH_BIRTH_RELA'] = df['DAYS_ID_PUBLISH'] / df['DAYS_BIRTH']
+
+# (1) 소득 및 대출 관련 비율
+df['INCOME_CREDIT_PERC'] = df['AMT_INCOME_TOTAL'] / df['AMT_CREDIT']
+df['INCOME_PER_PERSON'] = df['AMT_INCOME_TOTAL'] / df['CNT_FAM_MEMBERS']
+df['ANNUITY_INCOME_PERC'] = df['AMT_ANNUITY'] / df['AMT_INCOME_TOTAL']
+df['PAYMENT_RATE'] = df['AMT_ANNUITY'] / df['AMT_CREDIT']
+df['LTV'] = df['AMT_CREDIT'] / df['AMT_GOODS_PRICE']
+
+# (2) 시간/고용 관련 비율
+df['WORKING_LIFE_PERC'] = df['DAYS_EMPLOYED'] / df['DAYS_BIRTH']
+df['ID_TO_BIRTH_PERC'] = df['DAYS_ID_PUBLISH'] / df['DAYS_BIRTH']
+
+# (3) 외부 소스 통합 (NaN 제외 연산)
+df['EXT_SOURCES_MEAN'] = df[['EXT_SOURCE_1', 'EXT_SOURCE_2', 'EXT_SOURCE_3']].mean(axis=1)
+df['EXT_SOURCES_NANPROD'] = df[['EXT_SOURCE_1', 'EXT_SOURCE_2', 'EXT_SOURCE_3']].apply(lambda x: np.nanprod(x), axis=1)
+```
+
+
+마지막으로 'AMT_INCOME_TOTAL', 'AMT_CREDIT', 'AMT_ANNUITY', 'AMT_GOODS_PRICE' 변수들에 대해서는 로그 처리를 하였다.  
+해당 변수들은 아무래도 이상치 자체가 큰 의미를 갖기 보다는 오히려 왜곡을 할 수도 있다고 판단했기 때문이다.  
+
+저 변수들 말고도 추후에 또 로그값으로 변환할 변수를 찾게되면 추가로 기입하겠다.  
+
+-------------------------------------------------
+
+최종적으로 범주형 49개, 수치형 50개의 변수로 최종 데이터셋을 확정하였다.  
+
 
 ## 시각화
 
+전체 변수는 아니고 유사한 변수 혹은 파생변수들은 시각화에서 제외시켰다. 
+
+범주형의 경우, 
+
+<p align="center">
+  <a href="/images/projects/home_credit/cat_chart.png" data-lightbox="image-set">
+    <img src="/images/projects/home_credit/cat_chart.png" alt="Your Alt Text" >
+  </a>
+</p>
+
+FLAG_MOBIL, FLAG_CONT_MOBIL 의 경우 부도/정상 그룹간의 차이가 없어보여서 이후 분석에서 제외하기로 했다. 
+
+
+다음은 수치형
+
+<p align="center">
+  <a href="/images/projects/home_credit/num_chart.png" data-lightbox="image-set">
+    <img src="/images/projects/home_credit/num_chart.png" alt="Your Alt Text" >
+  </a>
+</p>
+
+조금 의외였던건, 근속일수가 없는 경우에 정상 그룹군이 꽤 많다는 점이다.  
+
+
+----------------------------------------------------------------------------
+
+이렇게 해서 모델링에 사용할 최종 데이터 셋은 추려졌다.  
+다음 단계에서 본격적으로 `OptBinning`을 통해 모델링 작업을 진행하겠다.  
+
+
+실습 코드 :   
+[EDA.ipynb](https://github.com/Solxcero/my-domains/blob/main/HomeCreditDefault/HomeCreditDefault%20_EDA.ipynb)  
+[시각화.ipynb](https://github.com/Solxcero/my-domains/blob/main/HomeCreditDefault/HomeCreditDefault_visual.ipynb)
