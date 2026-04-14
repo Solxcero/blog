@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>{{ .Title }}</title>
+    <style>
+        /* 다크 모드 기반 트렌디 스타일 */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            background: #0a0a0a; /* 깊은 블랙 배경 */
+            font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif; 
+            color: #ffffff;
+            line-height: 1.6;
+            word-break: keep-all;
+            overflow-x: hidden;
+        }
+
+        /* 암호 입력 화면 */
+        #password-screen {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #000; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; z-index: 1000;
+        }
+        #password-screen h2 { font-size: 1.2rem; margin-bottom: 25px; color: #fc2c98; letter-spacing: 1px; }
+        
+        input { 
+            width: 75%; max-width: 280px; padding: 18px; 
+            font-size: 1.1rem; border-radius: 0; /* 시크한 각진 느낌 */
+            border: none; border-bottom: 2px solid #333;
+            background: transparent; color: #fff;
+            outline: none; text-align: center; transition: 0.3s;
+        }
+        input:focus { border-bottom-color: #fc2c98; }
+        
+        button { 
+            width: 75%; max-width: 280px; padding: 16px; margin-top: 30px; 
+            background: transparent; color: #fc2c98; border: 1px solid #fc2c98; 
+            font-size: 0.9rem; font-weight: bold; cursor: pointer;
+            letter-spacing: 2px; text-transform: uppercase;
+        }
+
+        /* 메인 컨텐츠 컨테이너 */
+        #main-content { 
+            display: none; 
+            padding: 60px 24px; 
+            max-width: 500px; 
+            margin: 0 auto; 
+            animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* 유리창 느낌의 카드 디자인 */
+        .birthday-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px); /* 배경 흐림 효과 */
+            padding: 40px 25px; 
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        h1 { 
+            color: #fc2c98; /* 네온 민트 포인트 */
+            font-size: 2rem; margin-bottom: 30px; line-height: 1.2; 
+            font-weight: 800; text-shadow: 0 0 15px rgba(255, 0, 162, 0.3);
+        }
+
+        .letter-content { 
+            font-size: 1.1rem; text-align: left; white-space: pre-line; 
+            color: #e0e0e0; font-weight: 300; letter-spacing: -0.5px;
+        }
+
+        /* 하단 장식 및 음악 플레이어 */
+        .footer-deco { margin-top: 40px; text-align: center; }
+        .music-label { font-size: 0.7rem; color: #666; margin-bottom: 10px; letter-spacing: 1px; }
+        
+        audio { 
+            width: 100%; height: 35px; filter: invert(1); /* 플레이어를 화이트 톤으로 변경 */
+            opacity: 0.6; 
+        }
+
+        .emoji-bg { font-size: 1.5rem; margin-top: 30px; opacity: 0.8; filter: grayscale(0.5); }
+
+        /* 텍스트 선택(드래그) 시 스타일 */
+        ::selection {
+            background-color: #ff00ff; /* 핑크 네온 배경 */
+            color: #ffffff;            /* 글자색은 화이트 */
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.8); /* 글자에도 미세한 네온 광택 */
+        }
+
+        /* iOS/Safari 등 일부 브라우저 호환성을 위한 추가 */
+        ::-moz-selection {
+            background-color: #ff00ff;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="password-screen">
+        <h2>ENTER ACCESS CODE</h2>
+        <input type="tel" id="pw-input" placeholder="kury birthday" pattern="[0-9]*" inputmode="numeric">
+        <button onclick="checkPassword()">Unlock Letter</button>
+    </div>
+
+    <div id="main-content">
+        <div class="birthday-card">
+            <h1>2026<br>HAPPY BIRTHDAY<br>{{ .Params.friend_name }}</h1>
+            <div class="footer-deco">
+                <p class="music-label">NOW PLAYING: KURY SONG</p>
+                <audio id="bg-music" controls>
+                    <source src="/mp3/kury_song.mp3" type="audio/mpeg">
+                </audio>
+                <div class="emoji-bg">✨ 🖤 🎧 🍸</div>
+            </div>
+            <div class="letter-content">
+                {{ .Content }}
+            </div>
+
+  
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('pw-input').value;
+            if (password === "0416") {
+                document.getElementById('password-screen').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+                
+                // 음악 재생
+                const music = document.getElementById('bg-music');
+                music.play();
+
+                // 다크 모드에 어울리는 네온/화이트 폭죽
+                var end = Date.now() + (2 * 1000);
+                var colors = ['#00ffcc', '#ffffff', '#333333'];
+
+                (function frame() {
+                    confetti({
+                        particleCount: 2,
+                        angle: 60,
+                        spread: 55,
+                        origin: { x: 0, y: 0.8 },
+                        colors: colors
+                    });
+                    confetti({
+                        particleCount: 2,
+                        angle: 120,
+                        spread: 55,
+                        origin: { x: 1, y: 0.8 },
+                        colors: colors
+                    });
+
+                    if (Date.now() < end) {
+                        requestAnimationFrame(frame);
+                    }
+                }());
+            } else {
+                alert("너 생일 몰라?");
+            }
+        }
+    </script>
+</body>
+</html>
