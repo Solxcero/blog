@@ -15,7 +15,18 @@
             word-break: keep-all;
             overflow-x: hidden;
         }
+        /* 텍스트 선택(드래그) 시 스타일 */
+        ::selection {
+            background-color: #ff00ff; /* 핑크 네온 배경 */
+            color: #ffffff;            /* 글자색은 화이트 */
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.8); /* 글자에도 미세한 네온 광택 */
+        }
 
+        /* iOS/Safari 등 일부 브라우저 호환성을 위한 추가 */
+        ::-moz-selection {
+            background-color: #ff00ff;
+            color: #ffffff;
+        }
         /* 암호 입력 화면 */
         #password-screen {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -71,6 +82,7 @@
             color: #e0e0e0; font-weight: 300; letter-spacing: -0.5px;
         }
 
+
         /* 하단 장식 및 음악 플레이어 */
         .footer-deco { margin-top: 40px; text-align: center; }
         .music-label { font-size: 0.7rem; color: #666; margin-bottom: 10px; letter-spacing: 1px; }
@@ -82,18 +94,7 @@
 
         .emoji-bg { font-size: 1.5rem; margin-top: 30px; opacity: 0.8; filter: grayscale(0.5); }
 
-        /* 텍스트 선택(드래그) 시 스타일 */
-        ::selection {
-            background-color: #ff00ff; /* 핑크 네온 배경 */
-            color: #ffffff;            /* 글자색은 화이트 */
-            text-shadow: 0 0 10px rgba(255, 0, 255, 0.8); /* 글자에도 미세한 네온 광택 */
-        }
 
-        /* iOS/Safari 등 일부 브라우저 호환성을 위한 추가 */
-        ::-moz-selection {
-            background-color: #ff00ff;
-            color: #ffffff;
-        }
     </style>
 </head>
 <body>
@@ -134,9 +135,9 @@
                 const music = document.getElementById('bg-music');
                 music.play();
 
-                // 다크 모드에 어울리는 네온/화이트 폭죽
+                // 핑크/네온 폭죽 컬러  
                 var end = Date.now() + (2 * 1000);
-                var colors = ['#00ffcc', '#ffffff', '#333333'];
+                var colors = ['#fc2c98', '#ff00ff', '#ffffff'];
 
                 (function frame() {
                     confetti({
